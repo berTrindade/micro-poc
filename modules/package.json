@@ -4,12 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently npm:start:graph1 npm:start:graph2 npm:serve",
+    "start": "concurrently npm:start:graph1 npm:serve",
     "serve": "mkdir -p dist && cd dist && PORT=3001 npx servor",
     "start:graph1": "webpack --watch --config webpack.config.js"
   },
   "dependencies": {
-    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

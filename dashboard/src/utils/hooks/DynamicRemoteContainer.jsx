@@ -46,13 +46,11 @@ const useDynamicScript = url => {
   };
 };
 
+let isInitialized = false;
+
 function loadComponent(scope, module) {
-
-  console.log('scope :>> ', scope);
-  console.log('module :>> ', module);
-
   return async () => {
-    const react = require("react");
+      const react = require("react");
       const reactDom = require("react-dom");
       const recoil = require("recoil");
       const emotion = require("@emotion/react");
@@ -73,27 +71,30 @@ function loadComponent(scope, module) {
           },
         },
         recoil: {
-          [recoil]: {
+          "0.5.2": {
             get: () => new Promise(resolve => resolve(() => recoil)),
             loaded: true,
             from: "webpack4",
           },
         },
         "@emotion/react": {
-          [emotion]: {
+          "11.6.0": {
             get: () => new Promise(resolve => resolve(() => emotion)),
-            loaded: true,
-            from: "webpack4",
           },
         },
       };
 
       const container = window[scope];
 
-      try {
-        await container.init(legacyShareScope);
-      } catch (error) {
-        console.error(error);
+      if(!isInitialized) {
+        try {
+          await container.init(legacyShareScope);
+
+          isInitialized = true;
+
+        } catch (error) {
+          console.error(error);
+        }
       }
 
       const factory = await window[scope].get(module);
@@ -111,8 +112,6 @@ const DynamicRemoteContainer = ({
 }) => {
   
   const { ready, failed } = useDynamicScript(url);
-
-  console.log('ready :>> ', ready);
 
   if (!ready) return <h2>Loading dynamic script: {url}</h2>;
   

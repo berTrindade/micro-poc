@@ -4,13 +4,8 @@ import { useTheme, jsx } from '@emotion/react';
 import { PieChart } from "react-minimal-pie-chart";
 
 const Graph1 = ({ state }) => {
-
-  console.log('state :>> ', state);
-
+  
   const [graph, setGraph] = useRecoilState(state);
-
-  console.log('graph :>> ', graph);
-
   const theme = useTheme();
 
   return (
