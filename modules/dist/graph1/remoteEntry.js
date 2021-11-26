@@ -1,3 +1,11 @@
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is not neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 var graph1;graph1 =
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
@@ -11,37 +19,7 @@ var graph1;graph1 =
 /*! runtime requirements: __webpack_require__.d, __webpack_require__.o, __webpack_exports__, __webpack_require__.e, __webpack_require__, __webpack_require__.* */
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-var moduleMap = {
-	"graph1": () => {
-		return __webpack_require__.e("src_graph1_js").then(() => () => (__webpack_require__(/*! ./src/graph1 */ "./src/graph1.js")));
-	}
-};
-var get = (module, getScope) => {
-	__webpack_require__.R = getScope;
-	getScope = (
-		__webpack_require__.o(moduleMap, module)
-			? moduleMap[module]()
-			: Promise.resolve().then(() => {
-				throw new Error('Module "' + module + '" does not exist in container.');
-			})
-	);
-	__webpack_require__.R = undefined;
-	return getScope;
-};
-var init = (shareScope, initScope) => {
-	if (!__webpack_require__.S) return;
-	var oldScope = __webpack_require__.S["default"];
-	var name = "default"
-	if(oldScope && oldScope !== shareScope) throw new Error("Container initialization failed as it has already been initialized with a different share scope");
-	__webpack_require__.S[name] = shareScope;
-	return __webpack_require__.I(name, initScope);
-};
-
-// This exports getters to disallow modifications
-__webpack_require__.d(exports, {
-	get: () => get,
-	init: () => init
-});
+eval("var moduleMap = {\n\t\"graph1\": () => {\n\t\treturn Promise.all([__webpack_require__.e(\"webpack_sharing_consume_default_emotion_core_emotion_core\"), __webpack_require__.e(\"src_graph1_js\")]).then(() => () => (__webpack_require__(/*! ./src/graph1 */ \"./src/graph1.js\")));\n\t}\n};\nvar get = (module, getScope) => {\n\t__webpack_require__.R = getScope;\n\tgetScope = (\n\t\t__webpack_require__.o(moduleMap, module)\n\t\t\t? moduleMap[module]()\n\t\t\t: Promise.resolve().then(() => {\n\t\t\t\tthrow new Error('Module \"' + module + '\" does not exist in container.');\n\t\t\t})\n\t);\n\t__webpack_require__.R = undefined;\n\treturn getScope;\n};\nvar init = (shareScope, initScope) => {\n\tif (!__webpack_require__.S) return;\n\tvar oldScope = __webpack_require__.S[\"default\"];\n\tvar name = \"default\"\n\tif(oldScope && oldScope !== shareScope) throw new Error(\"Container initialization failed as it has already been initialized with a different share scope\");\n\t__webpack_require__.S[name] = shareScope;\n\treturn __webpack_require__.I(name, initScope);\n};\n\n// This exports getters to disallow modifications\n__webpack_require__.d(exports, {\n\tget: () => get,\n\tinit: () => init\n});\n\n//# sourceURL=webpack://modules/container_entry?");
 
 /***/ })
 
@@ -118,18 +96,6 @@ __webpack_require__.d(exports, {
 /******/ 			// return url for filenames based on template
 /******/ 			return "" + chunkId + ".js";
 /******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -233,11 +199,12 @@ __webpack_require__.d(exports, {
 /******/ 			var promises = [];
 /******/ 			switch(name) {
 /******/ 				case "default": {
-/******/ 					register("@emotion/react", "11.6.0", () => Promise.all([__webpack_require__.e("vendors-node_modules_emotion_react_dist_emotion-react_browser_esm_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => () => __webpack_require__(/*! ./node_modules/@emotion/react/dist/emotion-react.browser.esm.js */ "./node_modules/@emotion/react/dist/emotion-react.browser.esm.js")));
-/******/ 					register("react-dom", "17.0.2", () => Promise.all([__webpack_require__.e("vendors-node_modules_react-dom_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => () => __webpack_require__(/*! ./node_modules/react-dom/index.js */ "./node_modules/react-dom/index.js")));
+/******/ 					register("@emotion/core", "10.3.0", () => Promise.all([__webpack_require__.e("vendors-node_modules_emotion_core_dist_core_browser_esm_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => () => __webpack_require__(/*! ./node_modules/@emotion/core/dist/core.browser.esm.js */ "./node_modules/@emotion/core/dist/core.browser.esm.js")));
+/******/ 					register("emotion-theming", "10.3.0", () => Promise.all([__webpack_require__.e("vendors-node_modules_babel_runtime_helpers_esm_extends_js-node_modules_hoist-non-react-static-f3a2ec"), __webpack_require__.e("webpack_sharing_consume_default_react_react"), __webpack_require__.e("webpack_sharing_consume_default_emotion_core_emotion_core"), __webpack_require__.e("node_modules_emotion-theming_dist_emotion-theming_browser_esm_js-_a3dd1")]).then(() => () => __webpack_require__(/*! ./node_modules/emotion-theming/dist/emotion-theming.browser.esm.js */ "./node_modules/emotion-theming/dist/emotion-theming.browser.esm.js")));
+/******/ 					register("react-dom", "17.0.2", () => Promise.all([__webpack_require__.e("vendors-node_modules_react-dom_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react"), __webpack_require__.e("node_modules_object-assign_index_js")]).then(() => () => __webpack_require__(/*! ./node_modules/react-dom/index.js */ "./node_modules/react-dom/index.js")));
 /******/ 					register("react-minimal-pie-chart", "8.2.0", () => Promise.all([__webpack_require__.e("vendors-node_modules_react-minimal-pie-chart_dist_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => () => __webpack_require__(/*! ./node_modules/react-minimal-pie-chart/dist/index.js */ "./node_modules/react-minimal-pie-chart/dist/index.js")));
+/******/ 					register("react-redux", "7.2.6", () => Promise.all([__webpack_require__.e("vendors-node_modules_babel_runtime_helpers_esm_extends_js-node_modules_hoist-non-react-static-f3a2ec"), __webpack_require__.e("vendors-node_modules_react-redux_es_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react"), __webpack_require__.e("webpack_sharing_consume_default_react-dom_react-dom")]).then(() => () => __webpack_require__(/*! ./node_modules/react-redux/es/index.js */ "./node_modules/react-redux/es/index.js")));
 /******/ 					register("react", "17.0.2", () => __webpack_require__.e("vendors-node_modules_react_index_js").then(() => () => __webpack_require__(/*! ./node_modules/react/index.js */ "./node_modules/react/index.js")));
-/******/ 					register("recoil", "0.5.2", () => Promise.all([__webpack_require__.e("vendors-node_modules_recoil_es_recoil_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react"), __webpack_require__.e("webpack_sharing_consume_default_react-dom_react-dom")]).then(() => () => __webpack_require__(/*! ./node_modules/recoil/es/recoil.js */ "./node_modules/recoil/es/recoil.js")));
 /******/ 				}
 /******/ 				break;
 /******/ 			}
@@ -375,23 +342,27 @@ __webpack_require__.d(exports, {
 /******/ 		var installedModules = {};
 /******/ 		var moduleToHandlerMapping = {
 /******/ 			"webpack/sharing/consume/default/react/react": () => loadSingletonVersionCheckFallback("default", "react", [1,17,0,2], () => __webpack_require__.e("vendors-node_modules_react_index_js").then(() => () => __webpack_require__(/*! react */ "./node_modules/react/index.js"))),
+/******/ 			"webpack/sharing/consume/default/@emotion/core/@emotion/core": () => loadSingletonVersionCheckFallback("default", "@emotion/core", [1,10,0,10], () => Promise.all([__webpack_require__.e("vendors-node_modules_emotion_core_dist_core_browser_esm_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => () => __webpack_require__(/*! @emotion/core */ "./node_modules/@emotion/core/dist/core.browser.esm.js"))),
 /******/ 			"webpack/sharing/consume/default/react-dom/react-dom": () => loadStrictVersionCheckFallback("default", "react-dom", [1,17,0,2], () => __webpack_require__.e("vendors-node_modules_react-dom_index_js").then(() => () => __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"))),
-/******/ 			"webpack/sharing/consume/default/recoil/recoil": () => loadSingletonVersionCheckFallback("default", "recoil", [2,0,5,2], () => Promise.all([__webpack_require__.e("vendors-node_modules_recoil_es_recoil_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react"), __webpack_require__.e("webpack_sharing_consume_default_react-dom_react-dom")]).then(() => () => __webpack_require__(/*! recoil */ "./node_modules/recoil/es/recoil.js"))),
-/******/ 			"webpack/sharing/consume/default/@emotion/react/@emotion/react": () => loadSingletonVersionCheckFallback("default", "@emotion/react", [1,11,6,0], () => Promise.all([__webpack_require__.e("vendors-node_modules_emotion_react_dist_emotion-react_browser_esm_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => () => __webpack_require__(/*! @emotion/react */ "./node_modules/@emotion/react/dist/emotion-react.browser.esm.js"))),
-/******/ 			"webpack/sharing/consume/default/react-minimal-pie-chart/react-minimal-pie-chart": () => loadStrictVersionCheckFallback("default", "react-minimal-pie-chart", [1,8,2,0], () => Promise.all([__webpack_require__.e("vendors-node_modules_react-minimal-pie-chart_dist_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => () => __webpack_require__(/*! react-minimal-pie-chart */ "./node_modules/react-minimal-pie-chart/dist/index.js")))
+/******/ 			"webpack/sharing/consume/default/react-minimal-pie-chart/react-minimal-pie-chart": () => loadStrictVersionCheckFallback("default", "react-minimal-pie-chart", [1,8,2,0], () => Promise.all([__webpack_require__.e("vendors-node_modules_react-minimal-pie-chart_dist_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => () => __webpack_require__(/*! react-minimal-pie-chart */ "./node_modules/react-minimal-pie-chart/dist/index.js"))),
+/******/ 			"webpack/sharing/consume/default/react-redux/react-redux": () => loadSingletonVersionCheckFallback("default", "react-redux", [1,7,1,3], () => Promise.all([__webpack_require__.e("vendors-node_modules_babel_runtime_helpers_esm_extends_js-node_modules_hoist-non-react-static-f3a2ec"), __webpack_require__.e("vendors-node_modules_react-redux_es_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react"), __webpack_require__.e("webpack_sharing_consume_default_react-dom_react-dom")]).then(() => () => __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js"))),
+/******/ 			"webpack/sharing/consume/default/emotion-theming/emotion-theming": () => loadSingletonVersionCheckFallback("default", "emotion-theming", [1,10,0,10], () => Promise.all([__webpack_require__.e("vendors-node_modules_babel_runtime_helpers_esm_extends_js-node_modules_hoist-non-react-static-f3a2ec"), __webpack_require__.e("webpack_sharing_consume_default_react_react"), __webpack_require__.e("node_modules_emotion-theming_dist_emotion-theming_browser_esm_js-_a3dd0")]).then(() => () => __webpack_require__(/*! emotion-theming */ "./node_modules/emotion-theming/dist/emotion-theming.browser.esm.js")))
 /******/ 		};
 /******/ 		// no consumes in initial chunks
 /******/ 		var chunkMapping = {
 /******/ 			"webpack_sharing_consume_default_react_react": [
 /******/ 				"webpack/sharing/consume/default/react/react"
 /******/ 			],
+/******/ 			"webpack_sharing_consume_default_emotion_core_emotion_core": [
+/******/ 				"webpack/sharing/consume/default/@emotion/core/@emotion/core"
+/******/ 			],
 /******/ 			"webpack_sharing_consume_default_react-dom_react-dom": [
 /******/ 				"webpack/sharing/consume/default/react-dom/react-dom"
 /******/ 			],
 /******/ 			"src_graph1_js": [
-/******/ 				"webpack/sharing/consume/default/recoil/recoil",
-/******/ 				"webpack/sharing/consume/default/@emotion/react/@emotion/react",
-/******/ 				"webpack/sharing/consume/default/react-minimal-pie-chart/react-minimal-pie-chart"
+/******/ 				"webpack/sharing/consume/default/react-minimal-pie-chart/react-minimal-pie-chart",
+/******/ 				"webpack/sharing/consume/default/react-redux/react-redux",
+/******/ 				"webpack/sharing/consume/default/emotion-theming/emotion-theming"
 /******/ 			]
 /******/ 		};
 /******/ 		__webpack_require__.f.consumes = (chunkId, promises) => {
@@ -444,7 +415,7 @@ __webpack_require__.d(exports, {
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(!/^webpack_sharing_consume_default_react(\-dom_react\-dom|_react)$/.test(chunkId)) {
+/******/ 						if(!/^webpack_sharing_consume_default_(react(\-dom_react\-dom|_react)|emotion_core_emotion_core)$/.test(chunkId)) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => {
 /******/ 								installedChunkData = installedChunks[chunkId] = [resolve, reject];
@@ -524,4 +495,3 @@ __webpack_require__.d(exports, {
 /******/ 	return __webpack_require__("webpack/container/entry/graph1");
 /******/ })()
 ;
-//# sourceMappingURL=remoteEntry.js.map

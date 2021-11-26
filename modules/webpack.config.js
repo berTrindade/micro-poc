@@ -4,10 +4,8 @@ const deps = require('./package.json').dependencies
 
 module.exports = {
   entry: "./src/graph1",
-  cache: false,
-
   mode: "development",
-  devtool: "source-map",
+  cache: false,
 
   optimization: {
     minimize: false,
@@ -58,23 +56,25 @@ module.exports = {
         ...deps,
         react: {
           singleton: true,
-          shareScope: "default",
-          shareKey: "react",
           requiredVersion: deps.react,
         },
-        recoil: {
-          shareScope: "default",
-          shareKey: "recoil",
+        "react-redux": {
           singleton: true,
-          requiredVersion: deps.recoil,
+          requiredVersion: deps["react-redux"],
         },
-        "@emotion/react": {
+        "@emotion/core": {
           singleton: true,
-          shareScope: "default",
-          shareKey: "@emotion/react",
-          requiredVersion: deps["@emotion/react"],
+          requiredVersion: deps["@emotion/core"],
         },
+        "emotion-theming": {
+          singleton: true,
+          requiredVersion: deps["emotion-theming"],
+        },
+        "nectar-ui": {
+          singleton: true,
+          requiredVersion: deps["aurumsoftware/nectar-ui#v0.0.29"],
+        }
       },
-    }),
+    })
   ],
 };

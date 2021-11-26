@@ -1,7 +1,7 @@
 import './App.css';
 import { RecoilRoot, atom, useRecoilState } from "recoil";
 import { ThemeProvider } from '@emotion/react';
-import DynamicRemoteContainer from './utils/hooks/DynamicRemoteContainer';
+import DynamicRemoteContainer from './utils/hooks/useDynamicRemoteContainer';
 
 const theme = {
   colors: {
@@ -43,11 +43,13 @@ function Dashboard() {
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <RecoilRoot>
-        <Dashboard />
-      </RecoilRoot>
-    </ThemeProvider>
+    <h1>Hey</h1>
+
+    // <ThemeProvider theme={theme}>
+      // <RecoilRoot>
+        // <Dashboard />
+      // </RecoilRoot>
+    // </ThemeProvider>
   );
 }
 

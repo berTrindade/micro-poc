@@ -1,29 +1,34 @@
-/** @jsx jsx */
-import { useRecoilState } from "recoil";
-import { useTheme, jsx } from '@emotion/react';
-import { PieChart } from "react-minimal-pie-chart";
 
-const Graph1 = ({ state }) => {
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import { PieChart } from "react-minimal-pie-chart";
+import { useSelector, useDispatch } from "react-redux";
+import { useTheme } from "emotion-theming";
+
+const Graph1 = () => {
+  const dispatch = useDispatch();
+  const counter = useSelector(state => state.counter);
   
-  const [graph, setGraph] = useRecoilState(state);
+  const graph = [1, 2, 3];
+
   const theme = useTheme();
 
   return (
     <div
       css={{
         padding: 10,
-        border: `5px solid ${theme.colors.primary}`,
-        background: "#eee",
+        border: `20px solid ${theme.colors.danger}`,
+        background: `${theme.colors.success}`,
         fontSize: "x-large",
       }}
     >
       <button
-        onClick={() => setGraph(graph.map(item => item * 2))}
+        onClick={() => dispatch({ type: 'ADD_COUNTER', payload: 1 })}
         style={{ fontSize: "x-large" }}
       >
         Hi I'm the remote federated Child!
       </button>
-      <div>Data: {JSON.stringify(graph)}</div>
+      <div>Data: {JSON.stringify(counter)}</div>
       <PieChart
         data={[
           { title: "One", value: graph[0], color: "#E38627" },
